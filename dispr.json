@@ -1,0 +1,16 @@
+[
+  {
+    "title": "Winter Jacket",
+    "price": "$110",
+    "discount": "20%",
+    "duration": "2 Days",
+    "image": "/img/sm.jpg"
+  },
+  {
+    "title": "Shoes",
+    "price": "$40",
+    "discount": "10%",
+    "duration": "3 Days",
+    "image": "/img/sm.jpg"
+  }
+]

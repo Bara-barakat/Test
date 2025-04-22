@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="MB-Shop - Your one-stop shop for electronics and gaming products"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>MB-Shop - Electronics & Gaming Store</title>
+  </head>
+  <body>
+    <header class="nav">
+      <nav>
+        <h1>MB-Shop</h1>
+        <div class="link">
+          <ul>
+            <li><a href="index.html" aria-current="page">Home</a></li>
+            <li>
+              <a href="#" aria-haspopup="true">Shop</a>
+              <div class="mega-menu" role="menu">
+                <div class="menu-column">
+                  <h4>Playstation</h4>
+                  <ul>
+                    <li><a href="#" role="menuitem">All</a></li>
+                  </ul>
+                </div>
+                <div class="menu-column">
+                  <h4>Laptop & Computer</h4>
+                  <ul>
+                    <li><a href="#" role="menuitem">All</a></li>
+                  </ul>
+                </div>
+                <div class="menu-column">
+                  <h4>Screens(monitor)</h4>
+                  <ul>
+                    <li><a href="#" role="menuitem">All</a></li>
+                  </ul>
+                </div>
+                <div class="menu-column">
+                  <h4>All Accessories</h4>
+                  <ul>
+                    <li><a href="#" role="menuitem">All</a></li>
+                  </ul>
+                </div>
+                <div class="menu-column">
+                  <h4>Headphones</h4>
+                  <ul>
+                    <li><a href="#" role="menuitem">All</a></li>
+                  </ul>
+                </div>
+                <div class="menu-column">
+                  <h4>Gaming CD</h4>
+                  <ul>
+                    <li><a href="#" role="menuitem">All</a></li>
+                  </ul>
+                </div>
+                <div class="menu-column">
+                  <h4>Setup</h4>
+                  <ul>
+                    <li><a href="#" role="menuitem">All</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li><a href="contact.html">Fix and repair</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="icon">
+          <div style="display: none" class="search-container">
+            <button class="search-toggle" aria-label="Search">
+              <img
+                src="./img/magnifying-glass-solid.svg"
+                alt="Search Icon"
+                class="search-icon"
+              />
+            </button>
+            <div
+              class="search-modal"
+              role="dialog"
+              aria-label="Search products"
+            >
+              <button class="close-btn" aria-label="Close search">
+                &times;
+              </button>
+              <div class="search-box">
+                <input
+                  type="text"
+                  placeholder="Search Products..."
+                  aria-label="Search products"
+                />
+                <button class="search-btn" aria-label="Search">
+                  <img src="./img/magnifying-glass-solid.svg" alt="Search" />
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="Wishlist"
+            role="button"
+            tabindex="0"
+            aria-label="Wishlist"
+            onclick="toggleWishlist()"
+          >
+            <img src="./img/heart-regular.svg" alt="Wishlist" /> <span>0</span>
+          </div>
+          <div
+            class="cart"
+            role="button"
+            tabindex="0"
+            aria-label="Shopping cart"
+            onclick="toggleCart()"
+          >
+            <img src="./img/bag-shopping-solid.svg" alt="Cart" /> <span>0</span>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="show">
+      <div class="animated-background">
+        <h2 class="animated-text">Welcome To MB-Shop</h2>
+        <a href="#">Shop Now</a>
+      </div>
+    </div>
+
+    <div class="offer">
+      <div class="offer-container">
+        <div class="offer-content offer-content1">
+          <h3>Friday</h3>
+          <h2>Big Sale 50% Off</h2>
+          <br />
+          <h5><a href="#">View Collection</a></h5>
+        </div>
+        <div class="offer-content offer-content2">
+          <h3>Black Fridays</h3>
+          <h2>Sale Up To 70% Off</h2>
+          <br />
+          <h5><a href="#">View Collection</a></h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="best">
+      <h2>Best Sellers</h2>
+      <h3>Browse the collection of our new products.</h3>
+    </div>
+
+    <div class="bu">
+      <h2><a href="#hot">Hot categories</a></h2>
+      <h2><a href="#top">Top seller</a></h2>
+      <h2><a href="#d">Discount products</a></h2>
+    </div>
+
+    <div class="products-section">
+      <div class="products-header">
+        <div class="view-options">
+          <span>There Are Num Products.</span>
+        </div>
+        <div class="sort-options">
+          <label for="sort-select">Sort by</label>
+          <select id="sort-select" aria-label="Sort products">
+            <option value="price-low-high">Price: Low to High</option>
+            <option value="price-high-low">Price: High to Low</option>
+            <option value="name-a-z">Name, A to Z</option>
+            <option value="name-z-a">Name, Z to A</option>
+          </select>
+        </div>
+      </div>
+      <br />
+      <section aria-labelledby="hot-products">
+        <h2 id="hot">Hot products</h2>
+        <div class="hot" id="hot-products-container" role="list"></div>
+      </section>
+
+      <section aria-labelledby="top-products">
+        <h2 id="top">Top seller</h2>
+        <div class="hot" id="top-products-container" role="list"></div>
+      </section>
+
+      <section aria-labelledby="discount-products">
+        <h2 id="d">Discount products</h2>
+        <div class="hot" id="discount-products-container" role="list"></div>
+      </section>
+    </div>
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-section">
+          <h2>MB-Shop</h2>
+          <h3>Follow Us On Social:</h3>
+          <div class="social-icons">
+            <a
+              href="https://web.facebook.com/Megames1989"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+            >
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg"
+                alt="Facebook"
+              />
+            </a>
+            <a
+              href="https://wa.me/962786131799"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="WhatsApp"
+            >
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+                alt="WhatsApp"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <h3>&copy; Copyright Mohammad</h3>
+      </div>
+    </footer>
+
+    <aside class="wishlist-sidebar" role="complementary" aria-label="Wishlist">
+      <div class="wishlist-header">
+        <h2>Wishlist</h2>
+        <button class="close-btn" aria-label="Close wishlist">&times;</button>
+      </div>
+      <hr />
+      <div class="wishlist-content" role="list"></div>
+    </aside>
+
+    <aside class="cart-sidebar" role="complementary" aria-label="Shopping cart">
+      <div class="cart-header">
+        <h2>Cart</h2>
+        <button class="close-btn" aria-label="Close cart">&times;</button>
+      </div>
+      <hr />
+      <div class="cart-content" role="list"></div>
+      <hr />
+      <div class="cart-footer">
+        <p>Subtotal: <span class="subtotal">$0.00</span></p>
+        <div class="cart-actions">
+          <button class="checkout" aria-label="Proceed to checkout">
+            CHECKOUT
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <script>
+      // Toggle Wishlist Function
+      function toggleWishlist() {
+        const wishlistSidebar = document.querySelector(".wishlist-sidebar");
+        wishlistSidebar.classList.toggle("active");
+      }
+
+      // Toggle Cart Function
+      function toggleCart() {
+        const cartSidebar = document.querySelector(".cart-sidebar");
+        cartSidebar.classList.toggle("active");
+      }
+
+      // Close Wishlist when clicking close button
+      document
+        .querySelector(".wishlist-sidebar .close-btn")
+        .addEventListener("click", function () {
+          document
+            .querySelector(".wishlist-sidebar")
+            .classList.remove("active");
+        });
+
+      // Close Cart when clicking close button
+      document
+        .querySelector(".cart-sidebar .close-btn")
+        .addEventListener("click", function () {
+          document.querySelector(".cart-sidebar").classList.remove("active");
+        });
+
+      // Sort products function
+      function sortProducts(products, sortBy) {
+        return products.sort((a, b) => {
+          switch (sortBy) {
+            case "price-low-high":
+              return (
+                parseFloat(a.price.replace("$", "")) -
+                parseFloat(b.price.replace("$", ""))
+              );
+            case "price-high-low":
+              return (
+                parseFloat(b.price.replace("$", "")) -
+                parseFloat(a.price.replace("$", ""))
+              );
+            case "name-a-z":
+              return a.title.localeCompare(b.title);
+            case "name-z-a":
+              return b.title.localeCompare(a.title);
+            default:
+              return 0;
+          }
+        });
+      }
+
+      // Load products from different JSON files
+      async function loadProducts(jsonFile, containerId) {
+        try {
+          console.log(`Loading products from ${jsonFile}...`);
+          const response = await fetch(jsonFile);
+          console.log("Response status:", response.status);
+          const products = await response.json();
+          console.log("Products loaded:", products);
+          const container = document.getElementById(containerId);
+          console.log("Container found:", container);
+
+          // Store products in container's dataset for sorting
+          container.dataset.products = JSON.stringify(products);
+
+          displayProducts(products, container);
+        } catch (error) {
+          console.error("Error loading products:", error);
+        }
+      }
+
+      // Display products in container
+      function displayProducts(products, container) {
+        container.innerHTML = "";
+        products.forEach((product) => {
+          const productHTML = `
+            <div class="conbox" role="listitem">
+              <div class="box2">
+                <div class="tags">
+                  <h4>${product.duration}</h4>
+                  <h4>${product.discount}</h4>
+                </div>
+                <div class="image-container">
+                  <img src="${product.image}" alt="${product.title}" loading="lazy" />
+                </div>
+                <div class="wl">
+                  <button class="add-to-basket" onclick="addToCart('${product.title}', '${product.price}', '${product.image}')" aria-label="Add ${product.title} to cart">
+                    Add to Basket
+                  </button>
+                  <button class="wishlist-btn" onclick="addToWishlist('${product.title}', '${product.image}')" aria-label="Add ${product.title} to wishlist">
+                    <img src="./img/heart-regular.svg" alt="Add to wishlist" />
+                  </button>
+                </div>
+              </div>
+              <h3 class="product-title">${product.title}</h3>
+              <p class="price">${product.price}</p>
+            </div>
+          `;
+          container.innerHTML += productHTML;
+        });
+      }
+
+      // Add event listener for sort select
+      document
+        .getElementById("sort-select")
+        .addEventListener("change", function (e) {
+          const sortBy = e.target.value;
+          const containers = [
+            document.getElementById("hot-products-container"),
+            document.getElementById("top-products-container"),
+            document.getElementById("discount-products-container"),
+          ];
+
+          containers.forEach((container) => {
+            if (container && container.dataset.products) {
+              const products = JSON.parse(container.dataset.products);
+              const sortedProducts = sortProducts(products, sortBy);
+              displayProducts(sortedProducts, container);
+            }
+          });
+        });
+
+      // Add to Cart Function
+      function addToCart(title, price, image) {
+        const cartContent = document.querySelector(".cart-content");
+        const cartItem = `
+          <div class="cart-item" role="listitem">
+            <img src="${image}" alt="${title}" />
+            <div class="item-info">
+              <h3>${title}</h3>
+              <p class="item-price"><span class="dot"></span> ${price}</p>
+            </div>
+            <button class="remove-item" onclick="removeFromCart(this)" aria-label="Remove ${title} from cart">&times;</button>
+          </div>
+        `;
+        cartContent.innerHTML += cartItem;
+        updateSubtotal();
+        updateCartCount();
+      }
+
+      // Remove from Cart Function
+      function removeFromCart(button) {
+        const cartItem = button.closest(".cart-item");
+        cartItem.remove();
+        updateSubtotal();
+        updateCartCount();
+      }
+
+      // Update Cart Count Function
+      function updateCartCount() {
+        const cartItems = document.querySelectorAll(".cart-item");
+        const cartCount = document.querySelector(".cart span");
+        cartCount.textContent = cartItems.length;
+      }
+
+      // Add to Wishlist Function
+      function addToWishlist(title, image) {
+        const wishlistContent = document.querySelector(".wishlist-content");
+        const wishlistItem = `
+          <div class="wishlist-item" role="listitem">
+            <img src="${image}" alt="${title}" />
+            <div class="item-info">
+              <h3>${title}</h3>
+              <button class="view-products" aria-label="View ${title}">View Product</button>
+            </div>
+            <button class="remove-from-wishlist" onclick="removeFromWishlist(this)" aria-label="Remove ${title} from wishlist">&times;</button>
+          </div>
+        `;
+        wishlistContent.innerHTML += wishlistItem;
+        updateWishlistCount();
+      }
+
+      // Remove from Wishlist Function
+      function removeFromWishlist(button) {
+        const wishlistItem = button.closest(".wishlist-item");
+        wishlistItem.remove();
+        updateWishlistCount();
+      }
+
+      // Update Wishlist Count Function
+      function updateWishlistCount() {
+        const wishlistItems = document.querySelectorAll(".wishlist-item");
+        const wishlistCount = document.querySelector(".Wishlist span");
+        wishlistCount.textContent = wishlistItems.length;
+      }
+
+      // Update Subtotal Function
+      function updateSubtotal() {
+        const prices = document.querySelectorAll(".cart-content .item-price");
+        let total = 0;
+        prices.forEach((price) => {
+          const priceText = price.textContent.match(/\$(\d+\.?\d*)/);
+          if (priceText && priceText[1]) {
+            total += parseFloat(priceText[1]);
+          }
+        });
+        document.querySelector(".subtotal").textContent = `$${total.toFixed(
+          2
+        )}`;
+      }
+
+      // WhatsApp Checkout Function
+      function sendToWhatsApp() {
+        const cartItems = document.querySelectorAll(".cart-item");
+        if (cartItems.length === 0) {
+          alert("Your cart is empty!");
+          return;
+        }
+
+        let message = "New Order from MB-Shop:\n\n";
+        let total = 0;
+
+        cartItems.forEach((item) => {
+          const title = item.querySelector("h3").textContent;
+          const price = item
+            .querySelector(".item-price")
+            .textContent.match(/\$(\d+\.?\d*)/)[0];
+          message += `Product: ${title}\nPrice: ${price}\n\n`;
+          total += parseFloat(price.replace("$", ""));
+        });
+
+        message += `Total Amount: $${total.toFixed(2)}`;
+
+        // Encode the message for WhatsApp URL
+        const encodedMessage = encodeURIComponent(message);
+        const whatsappNumber = "962786131799"; // Your WhatsApp number
+        const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+        // Open WhatsApp in a new tab
+        window.open(whatsappUrl, "_blank");
+      }
+
+      // Load all product sections
+      loadProducts("products.json", "hot-products-container");
+      loadProducts("tops.json", "top-products-container");
+      loadProducts("dispr.json", "discount-products-container");
+
+      // Add click event to checkout button
+      document
+        .querySelector(".checkout")
+        .addEventListener("click", sendToWhatsApp);
+
+      // Prevent right-click
+      document.addEventListener("contextmenu", function (e) {
+        e.preventDefault();
+      });
+    </script>
+  </body>
+</html>

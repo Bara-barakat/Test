@@ -1,0 +1,16 @@
+[
+  {
+    "title": "Kaval",
+    "price": "$10",
+    "discount": "20%",
+    "duration": "2 Days",
+    "image": "/img/sm.jpg"
+  },
+  {
+    "title": "Adidas Shoes",
+    "price": "$90",
+    "discount": "10%",
+    "duration": "3 Days",
+    "image": "/img/sm.jpg"
+  }
+]

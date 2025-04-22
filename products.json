@@ -1,0 +1,16 @@
+[
+  {
+    "title": "Originals Windbreaker Winter Jacket",
+    "price": "$120",
+    "discount": "20%",
+    "duration": "2 Days",
+    "image": "/img/sm.jpg"
+  },
+  {
+    "title": "Running Shoes",
+    "price": "$99",
+    "discount": "10%",
+    "duration": "3 Days",
+    "image": "/img/sm.jpg"
+  }
+]
